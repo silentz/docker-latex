@@ -22,3 +22,10 @@ RUN tar -xvf install.tar.gz -C install \
 WORKDIR /dist/install
 RUN echo "selected_scheme scheme-full" > profile
 RUN ./install-tl -profile ./profile
+
+# Setup environment
+
+WORKDIR /project
+ENV HOME /project
+ENV PATH="/usr/local/texlive/2021/bin/x86_64-linux:${PATH}"
+
